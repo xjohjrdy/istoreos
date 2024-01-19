@@ -136,6 +136,7 @@ board_fixup_iface_name() {
 		fi
 		;;
 	hinlink,h88k-v3|\
+	friendlyelec,nanopc-t6|\
 	friendlyelec,nanopi-r6s)
 		device="$(get_iface_device eth1)"
 		if [[ "$device" = "0004:41:00.0" ]]; then

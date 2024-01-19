@@ -165,6 +165,17 @@ $(call Device/rk3588_combined_friendlyelec)
 endef
 TARGET_DEVICES += friendlyarm_nanopi-r6s
 
+define Device/friendlyarm_nanopc-t6
+$(call Device/rk3588)
+  DEVICE_VENDOR := FriendlyARM
+  DEVICE_MODEL := NanoPC T6
+  SUPPORTED_DEVICES += friendlyelec,nanopc-t6 friendlyelec
+  DEVICE_DTS := rk3588-nanopc-t6
+  DEVICE_PACKAGES := kmod-r8125 kmod-nvme kmod-thermal
+endef
+TARGET_DEVICES += friendlyarm_nanopc-t6
+
+
 define Device/lyt_t68m
 $(call Device/rk3568)
   DEVICE_VENDOR := LYT
