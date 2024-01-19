@@ -167,6 +167,7 @@ TARGET_DEVICES += friendlyarm_nanopi-r6s
 
 define Device/friendlyarm_nanopc-t6
 $(call Device/rk3588)
+$(call Device/rk3588_combined_friendlyelec)
   DEVICE_VENDOR := FriendlyARM
   DEVICE_MODEL := NanoPC T6
   SUPPORTED_DEVICES += friendlyelec,nanopc-t6 friendlyelec
