@@ -165,11 +165,20 @@ $(call Device/rk3588_combined_friendlyelec)
 endef
 TARGET_DEVICES += friendlyarm_nanopi-r6s
 
+# define Device/rk3588
+#   SOC := rk3588
+#   DEVICE_DTS_DIR := ../dts/rk3588
+#   DEVICE_DTS = $$(SOC)-$$(lastword $$(subst _, ,$$(DEVICE_NAME)))
+#   UBOOT_DEVICE_NAME := easepi-rk3588
+#   IMAGE/sysupgrade.img.gz := boot-common | boot-script rk3588 | pine64-img | gzip | append-metadata
+# endef
+
 define Device/friendlyarm_nanopc-t6
 $(call Device/rk3588)
   DEVICE_VENDOR := FriendlyARM
   DEVICE_MODEL := NanoPC T6
-  SUPPORTED_DEVICES += friendlyelec,nanopc-t6 friendlyelec
+  SOC := rk3588
+  SUPPORTED_DEVICES += friendlyelec,nanopc-t6 friendlyarm,nanopc-t6
   DEVICE_DTS := rk3588-nanopc-t6
   DEVICE_PACKAGES := kmod-r8125 kmod-nvme kmod-thermal
 endef
